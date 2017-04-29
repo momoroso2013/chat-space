@@ -1,21 +1,40 @@
-#DB設計
+# DB設計
 
-##users table
+## users table
+***
+| Colum | Type | Options |
+| name | string | null: false, unique: true, index: true |
+| mail | string | null: false, unique: true |
 
-|Colum|Type|Options|
-|name|string|null: false, unique: true, index: true|
-|mail|string|null: false, unique: true|
+# Association
+ *has_many :groups through: :group_user
+ *has_many :messages
 
+## groups table
+***
+| Colum | Type | Options |
+| name | text | null: false |
 
-##group table
-|Colum|Type|Options|
-|group_id|integer||
-|user_id|integer||
+# Association
+ * has_many users through: :group_user
 
-##message table
+## group_user table
+***
+| Colum | Type | Options |
+| group_id | integer |
+| user_id | integer |
 
-|Colum|Type|Options|
-|text |string||
-|image|text||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+# Association
+ * belongs_to user
+ * belongs_to massage
+
+## messages table
+***
+| Colum | Type | Options |
+| text | string |
+| image | text |
+| user_id | integer | null: false, foreign_key: true |
+| group_id | integer | null: false, foreign_key: true |
+
+# Association
+ * belongs_to user
