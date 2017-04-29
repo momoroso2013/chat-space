@@ -12,6 +12,7 @@
  *has_many :messages
 
 
+
 ## groups table
 
 | Colum | Type | Options     |
@@ -22,6 +23,7 @@
  * has_many users through: :group_user
 
 
+
 ## group_user table
 
 | Colum    | Type    | Options |
@@ -29,10 +31,11 @@
 | group_id | integer |         |
 | user_id  | integer |         |
 
-
 ### Association
  * belongs_to user
  * belongs_to massage
+
+
 
 ## messages table
 
