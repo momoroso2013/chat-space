@@ -2,9 +2,11 @@
 
 ## users table
 ***
-| Colum | Type | Options |
-| name | string | null: false, unique: true, index: true |
-| mail | string | null: false, unique: true |
+
+| Colum | Type   | Options                                  |
+|:-----:|:------:|:----------------------------------------:|
+| name  | string | null: false, unique: true, index: true   |
+| mail  | string | null: false, unique: true                |
 
 # Association
  *has_many :groups through: :group_user
@@ -12,17 +14,21 @@
 
 ## groups table
 ***
-| Colum | Type | Options |
-| name | text | null: false |
+
+| Colum | Type | Options     |
+|:-----:|:----:|:-----------:|
+| name  | text | null: false |
 
 # Association
  * has_many users through: :group_user
 
 ## group_user table
 ***
-| Colum | Type | Options |
-| group_id | integer |
-| user_id | integer |
+
+| Colum    | Type    | Options |
+|:--------:|:-------:|:-------:|
+| group_id | integer |         |
+| user_id  | integer |         |
 
 # Association
  * belongs_to user
@@ -30,10 +36,12 @@
 
 ## messages table
 ***
-| Colum | Type | Options |
-| text | string |
-| image | text |
-| user_id | integer | null: false, foreign_key: true |
+
+| Colum    | Type    | Options                        |
+|:--------:|:-------:|:------------------------------:|
+| text     | string  |                                |
+| image    | text    |                                |
+| user_id  | integer | null: false, foreign_key: true |
 | group_id | integer | null: false, foreign_key: true |
 
 # Association
