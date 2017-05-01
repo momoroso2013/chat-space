@@ -49,5 +49,5 @@
 
 ### Association
  * belongs_to user
- * balungs_to group
+ * belongs_to group
 
