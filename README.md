@@ -20,9 +20,9 @@
 | name  | text | null: false |
 
 ### Association
- * has_many users through: :group_users
- * has_many messages
- * has_many group_users
+ * has_many :users through: :group_users
+ * has_many :messages
+ * has_many :group_users
 
 
 ## group_users table
@@ -33,8 +33,8 @@
 | user_id  | references | foreign_key: true |
 
 ### Association
- * belongs_to user
- * belongs_to group
+ * belongs_to :user
+ * belongs_to :group
 
 
 
