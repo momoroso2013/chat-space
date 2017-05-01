@@ -20,9 +20,9 @@
 | name  | text | null: false |
 
 ### Association
- * has_many users through: :group_user
+ * has_many users through: :group_users
  * has_many messages
-
+ * has_many group_users
 
 
 ## group_users table
