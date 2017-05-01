@@ -7,9 +7,9 @@
 | name  | string | null: false, unique: true, index: true   |
 
 ### Association
- * has_many :groups through: :group_user
+ * has_many :groups through: :group_users
  * has_many :messages
- * accepts_nested_attributes_for :group_users
+ * has_many :group_users
 
 
 
