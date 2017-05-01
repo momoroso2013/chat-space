@@ -50,3 +50,4 @@
 ### Association
  * belongs_to user
  * balungs_to group
+
