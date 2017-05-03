@@ -1,0 +1,88 @@
+
+
+$header_height: 96px;
+$main_padding: 40px;
+
+.chat {
+  background-color: #AAAAAA;
+  height: 100vh;
+  width: calc(100vw - 300px );
+  float: right;
+  &__group {
+    background-color: white;
+    height: $header_height;
+    &__edit {
+      height: 40px;
+      font-weight: lighter;
+      text-align: center;
+      border:1px solid #38aef0;
+      color: #38aef0;
+      padding: 5px 20px;
+      float: right;
+      margin: 28px 40px;
+
+  }
+  .group-name {
+      font-size: 20px;
+      padding: 35px $main_padding 0;
+    }
+
+  .group-member {
+      color: #999999;
+      font-size: 12px;
+      padding: 15px $main_padding 0;
+    }
+
+  }
+  &__content-message {
+    height: calc(100% - (#{$header_height} + 90px));
+    padding: 46px $main_padding 0;
+    ul li.posted-user-name {
+        float: left;
+        padding-right: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #434a54;
+    }
+       li.created-at {
+        color: #999999;
+        font-size: 12px;
+    }
+       li.user-message{
+        padding: 10px 0 40px 0px;
+        font-size: 14px;
+        color: #434a54;
+
+    }
+
+  }
+  &__send-message {
+    background-color: gray;
+    height: 90px;
+    padding: 20px $main_padding;
+    .type-message {
+      background-color: white;
+      height: 50px;
+      &--send {
+        background-color: #38aef0;
+        color: white;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        padding: 10px 0;
+        float: right;
+        margin-left: 15px;
+       }
+      &--image {
+        height: 50px;
+        width: 20px;
+        float: right;
+        padding: 10px 0;
+        margin-right: 10px;
+      }
+
+    }
+  }
+
+
+}
