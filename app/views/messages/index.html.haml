@@ -1,0 +1,25 @@
+!!!
+%html
+
+
+
+.menu
+  .menu__user-name
+    %ul
+      %li ユーザーネーム
+      %li.fa.fa-edit
+      %li.fa.fa-cog
+  = render partial: "list"
+
+.chat
+  .chat__group
+    .chat__group__edit Edit
+    .group-name Sampleグループ
+    .group-member member...
+  = render partial: "message"
+  .chat__send-message
+    .type-message
+      .type-message--send Send
+      .type-message--image
+        %i.fa.fa-file-picture-o
+
