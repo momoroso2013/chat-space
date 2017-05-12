@@ -9,7 +9,8 @@
   = render partial: "groups/list", collection: @groups, as: "group"
 .chat
   .chat__group
-    .chat__group__edit Edit
+    .chat__group__edit
+      = link_to "Edit", edit_group_path(@group)
     .group-name Sampleグループ
     .group-member
     Member:
