@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
 
+before_action :index_variables, only: [:edit, :update]
 
   def index
     @groups = current_user.groups.order('id DESC')
@@ -19,17 +20,25 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
+    index_variables
   end
 
   def update
-    group = Group.find(params[:id])
-    group.update(group_params)
+    index_variables
+    if @group.update(group_params)
     redirect_to :root, notice: "グループを編集しました"
+  else
+    render :new
+  end
   end
 
   private
+
   def group_params
     params.require(:group).permit(:name, user_ids: [])
+  end
+
+  def index_variables
+    @group = Group.find(params[:id])
   end
 end
