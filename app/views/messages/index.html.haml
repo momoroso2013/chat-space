@@ -1,27 +1,21 @@
-!!!
-%html
-
-= render partial: "flash"
-
 .menu
   .menu__user-name
     %ul
-      %li ユーザーネーム
+      %li= current_user.name
       = link_to new_group_path do
         %li.fa.fa-edit
       = link_to edit_user_registration_path do
         %li.fa.fa-cog
-  = render partial: "list"
-
+  = render partial: "groups/list", collection: @groups, as: "group"
 .chat
   .chat__group
     .chat__group__edit Edit
-    .group-name Sampleグループ
-    .group-member member...
+    .group-name= @groups.find(params[:group_id]).name
+    .group-member
+    Member:
   = render partial: "message"
   .chat__send-message
     .type-message
       .type-message--send Send
       .type-message--image
         %i.fa.fa-file-picture-o
-
