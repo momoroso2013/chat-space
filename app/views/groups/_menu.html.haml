@@ -1,7 +1,8 @@
 .menu__user-name
   %ul
-    %li= current_user.name
-    = link_to new_group_path do
-      %li.fa.fa-edit
-    = link_to edit_user_registration_path do
-      %li.fa.fa-cog
+    %li
+    = current_user.name
+  = link_to new_group_path do
+    %li.fa.fa-edit
+  = link_to edit_user_registration_path do
+    %li.fa.fa-cog
