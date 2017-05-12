@@ -25,6 +25,7 @@ $menu_padding: 20px;
   }
   &__list {
     @include group-template();
+    list-style: none;
     ul {
        margin-top: 96px;
 
