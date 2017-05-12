@@ -1,4 +1,10 @@
 class GroupsController < ApplicationController
+
+
+  def index
+    @groups = current_user.groups.order('id DESC')
+  end
+
   def new
     @group = Group.new
   end
@@ -10,6 +16,10 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+     # @group = Group.find(params[:id])
   end
 
   private
