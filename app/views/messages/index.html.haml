@@ -12,10 +12,13 @@
   .chat__group
     .chat__group__edit
       = link_to "Edit", edit_group_path(@group)
-    .group-name Sampleグループ
+    .group-name= @group.name
     .group-member
     Member:
-  = render partial: "message"
+    = @group.users.pluck(:name)
+  .chat__content-message
+    = render partial: 'message', collection: @messages
+
   .chat__send-message
     = form_for [@group, @message] do |f|
       = f.text_field :text, class: "type-message", placeholder: "Type a message"

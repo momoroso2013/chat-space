@@ -32,21 +32,22 @@
   &__content-message {
     height: calc(100% - (#{$header_height} + 90px));
     padding: 46px $main_padding 0;
-    ul li.posted-user-name {
-        float: left;
-        padding-right: 10px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #434a54;
+    p.posted-user-name {
+      padding-right: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #434a54;
+      line-height: 16px;
     }
-       li.created-at {
-        color: #999999;
-        font-size: 12px;
+    p.created-at {
+      color: #999999;
+      font-size: 12px;
+      line-height: 16px;
     }
-       li.user-message{
-        padding: 10px 0 40px 0px;
-        font-size: 14px;
-        color: #434a54;
+    p.user-message{
+      padding: 10px 0 40px 0px;
+      font-size: 14px;
+      color: #434a54;
 
     }
 

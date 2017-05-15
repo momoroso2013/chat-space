@@ -4,6 +4,7 @@ before_action :find_group, only: [:index, :create]
 
 def index
   @message = Message.new
+  @messages = @group.messages.includes(:user)
   @groups = current_user.groups.order("id DESC")
 end
 

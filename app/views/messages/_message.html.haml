@@ -1,9 +1,6 @@
-.chat__content-message
-  %ul
-    %li.posted-user-name user-name
-    %li.created-at created-at
-    %li.user-message チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。
-    %ul
-    %li.posted-user-name user-name
-    %li.created-at created-at
-    %li.user-message チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。
+%p.posted-user-name
+  = message.user.name
+%p.created-at
+  = message.created_at
+%p.user-message
+  = message.text
