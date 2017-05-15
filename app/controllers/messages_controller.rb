@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
 
-before_action :group_find
+before_action :find_group, only: [:index, :create]
 
 def index
   @message = Message.new
@@ -19,7 +19,7 @@ end
 
 private
 
-def group_find
+def find_group
   @group = Group.find(params[:group_id])
 end
 
