@@ -1,9 +1,6 @@
 .chat__content-message
   %ul
-    %li.posted-user-name user-name
-    %li.created-at created-at
-    %li.user-message チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。
-    %ul
-    %li.posted-user-name user-name
-    %li.created-at created-at
-    %li.user-message チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。チャットしてます。
+  -@messages.each do |message|
+    %li.posted-user-name= message.user.name
+    %li.created-at= message.created_at
+    %li.user-message= message.text

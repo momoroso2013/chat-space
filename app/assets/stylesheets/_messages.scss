@@ -32,6 +32,7 @@
   &__content-message {
     height: calc(100% - (#{$header_height} + 90px));
     padding: 46px $main_padding 0;
+    list-style: none;
     ul li.posted-user-name {
         float: left;
         padding-right: 10px;
