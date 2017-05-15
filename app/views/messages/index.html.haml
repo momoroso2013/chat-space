@@ -16,7 +16,9 @@
     Member:
   = render partial: "message"
   .chat__send-message
-    .type-message
-      .type-message--send Send
-      .type-message--image
+    = form_for [@group, @message] do |f|
+      = f.text_field :text, class: "type-message", placeholder: "Type a message"
+      = f.label :image do
+        = f.file_field :image, class: "type-message--image", style: "display:none;"
         %i.fa.fa-file-picture-o
+        = f.submit "Send", class: "type-message--send"
