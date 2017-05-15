@@ -58,6 +58,7 @@
     .type-message {
       background-color: white;
       height: 50px;
+      width: calc(100% - 135px);
       &--send {
         background-color: #38aef0;
         color: white;
