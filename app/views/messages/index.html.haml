@@ -16,7 +16,9 @@
     .group-member
     Member:
     = @group.users.pluck(:name)
-  = render partial: "message"
+  .chat__content-message
+    = render partial: 'message', collection: @messages, as: :message
+
   .chat__send-message
     = form_for [@group, @message] do |f|
       = f.text_field :text, class: "type-message", placeholder: "Type a message"

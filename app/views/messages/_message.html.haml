@@ -1,6 +1,6 @@
-.chat__content-message
-  %ul
-  -@messages.each do |message|
-    %li.posted-user-name= message.user.name
-    %li.created-at= message.created_at
-    %li.user-message= message.text
+%p.posted-user-name
+  = message.user.name
+%p.created-at
+  = message.created_at
+%p.user-message
+  = message.text
