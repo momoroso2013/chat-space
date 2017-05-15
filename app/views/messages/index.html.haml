@@ -17,7 +17,7 @@
     Member:
     = @group.users.pluck(:name)
   .chat__content-message
-    = render partial: 'message', collection: @messages, as: :message
+    = render partial: 'message', collection: @messages
 
   .chat__send-message
     = form_for [@group, @message] do |f|
