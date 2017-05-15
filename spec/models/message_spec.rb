@@ -7,9 +7,7 @@ describe Message do
       expect(message).to be_valid
     end
   end
-end
 
-describe Message do
   describe '#create' do
     it "is invalid without a text" do
       message = build(:message, text: "")
