@@ -37,5 +37,42 @@ describe MessagesController do
       end
     end
   end
-end
 
+  describe "POST #create" do
+    let(:user)  { create(:user) }
+    let(:group) { create(:group) }
+    let(:message) { create(:message, group: group, user: user) }
+    let(:message_params) do {
+                               message: {
+                               text: message.text
+                               },
+                               group_id: group.id
+                            }
+    end
+    let(:message_empty_params) do {
+                                     message: {
+                                     text: ""
+                                     },
+                                     group_id: group.id
+                                  }
+    end
+
+    before do
+    login_user user
+    end
+
+    context "when message saved" do
+      it "renders the :create template" do
+        post :create, message_params
+        expect(response).to redirect_to (group_messages_path)
+      end
+    end
+
+    context "when message CAN'T saved" do
+      it "renders the :index template" do
+        post :create, message_empty_params
+        expect(response).to render_template :index
+      end
+    end
+  end
+end
