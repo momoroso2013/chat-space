@@ -9,7 +9,6 @@ describe MessagesController do
       before do
         login_user user
         get :index, group_id: group.id
-
       end
 
         it "renders the :index template" do
@@ -36,7 +35,7 @@ describe MessagesController do
         get :index, group_id: group.id
         expect(response).to redirect_to (new_user_session_path)
       end
-      end
+    end
 end
 end
 
