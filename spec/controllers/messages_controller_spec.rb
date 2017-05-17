@@ -42,23 +42,13 @@ describe MessagesController do
     let(:user)  { create(:user) }
     let(:group) { create(:group) }
     let(:message) { create(:message, group: group, user: user) }
-    let(:message_params) do {
-                               message: {
-                               text: message.text
-                               },
-                               group_id: group.id
-                            }
+    let(:message_params) do {message: {text: message.text}, group_id: group.id}
     end
-    let(:message_empty_params) do {
-                                     message: {
-                                     text: ""
-                                     },
-                                     group_id: group.id
-                                  }
+    let(:message_empty_params) do {message: {text: ""}, group_id: group.id}
     end
 
     before do
-    login_user user
+      login_user user
     end
 
     context "when message saved" do
@@ -74,5 +64,10 @@ describe MessagesController do
         expect(response).to render_template :index
       end
     end
+
+      it "assigns the requested message to @message" do
+        expect{assigns(:message)}.to change(Message, :count).by(0)
+      end
+
   end
 end
