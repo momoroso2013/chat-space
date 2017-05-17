@@ -28,6 +28,7 @@ describe MessagesController do
         groups = user.groups
         expect(assigns(:groups)).to eq groups
       end
+
     end
 
     context "when user has NOT signed in" do
@@ -52,22 +53,35 @@ describe MessagesController do
     end
 
     context "when message saved" do
-      it "renders the :create template" do
+      before do
         post :create, message_params
+      end
+
+      it "renders the :create template" do
         expect(response).to redirect_to (group_messages_path)
+      end
+
+      it "create flash message" do
+        expect(flash.now[:notice]).to match("メッセージを送信しました。")
       end
     end
 
     context "when message CAN'T saved" do
-      it "renders the :index template" do
+      before do
         post :create, message_empty_params
+      end
+
+      it "renders the :index template" do
         expect(response).to render_template :index
+      end
+
+      it "create flash message" do
+        expect(flash.now[:alert]).to match("メッセージを入力してください。")
       end
     end
 
       it "assigns the requested message to @message" do
         expect{assigns(:message)}.to change(Message, :count).by(0)
       end
-
   end
 end
