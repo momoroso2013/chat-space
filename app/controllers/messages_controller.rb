@@ -11,7 +11,9 @@ end
 def create
   @message = current_user.messages.new(message_params)
   if @message.save
-    redirect_to group_messages_path, notice: "メッセージを送信しました。"
+    respond_to do |format|
+      format.json
+    end
   else
     flash.now[:alert] = "メッセージを入力してください。"
     render :index
