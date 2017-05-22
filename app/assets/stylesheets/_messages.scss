@@ -32,6 +32,7 @@
   &__content-message {
     height: calc(100% - (#{$header_height} + 90px));
     padding: 46px $main_padding 0;
+    overflow: scroll;
     p.posted-user-name {
       padding-right: 10px;
       font-size: 16px;
