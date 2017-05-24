@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def search
-    @users = User.where("name LIKE(?)", "%#{user_params[:name]}%")
+    @users = User.search(user_params)
     respond_to do |format|
       format.json
     end
