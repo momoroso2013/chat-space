@@ -25,7 +25,6 @@ $(function() {
   $("#user-search-field").on("keyup", function(e) {
     e.preventDefault();
     var input = $("#user-search-field").val();
-    $(".list").remove();
     $.ajax({
       type: 'GET',
       url: '/users/search',
@@ -37,8 +36,7 @@ $(function() {
       dataType: 'json'
     })
     .done(function(data){
-      console.log("====data====");
-      console.log(data);
+      $(userList).find(".chat-group-user").remove();
       $.each(data, function(i, user) {
         appendList(user);
       });
