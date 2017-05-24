@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :groups, except: [:destroy] do
     resources :messages, only: [:create, :index]
   end
-  resources :users do
+  resources :users, only: [] do
     collection do
       get :search
     end
