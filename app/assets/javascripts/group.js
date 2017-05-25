@@ -36,9 +36,14 @@ $(function() {
       dataType: 'json'
     })
     .done(function(data){
+      // 復習のために残す
+      // console.log("====data====");
+      // console.log(data);
       $(userList).find(".chat-group-user").remove();
-      $.each(data, function(i, user) {
-        appendList(user);
+      $.each(data, function(i, users) {
+        $.each(users, function(i, user) {
+          appendList(user);
+        });
       });
     });
   });
