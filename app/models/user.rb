@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users
   has_many :messages
 
-  scope :search, -> (params){where("name LIKE(?)", "%#{params[:name]}%")}
+  scope :search_by_name, -> (params){where("name LIKE(?)", "%#{params[:name]}%")}
 end

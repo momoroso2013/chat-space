@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def search
-    @users = User.search(user_params)
+    @users = User.search_by_name(user_params)
     respond_to do |format|
       format.json
     end
