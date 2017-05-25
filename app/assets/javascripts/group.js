@@ -40,10 +40,8 @@ $(function() {
       // console.log("====data====");
       // console.log(data);
       $(userList).find(".chat-group-user").remove();
-      $.each(data, function(i, users) {
-        $.each(users, function(i, user) {
-          appendList(user);
-        });
+      $.each(data.users, function(i, user) {
+        appendList(user);
       });
     });
   });
@@ -65,7 +63,7 @@ $(function() {
 
   $(memberList).on('click', '.chat-group-user__btn--remove', function() {
     $(this).parent().remove();
-    })
+  })
 });
 
 
