@@ -7,7 +7,9 @@
         %li.fa.fa-edit
       = link_to edit_user_registration_path do
         %li.fa.fa-cog
-  = render partial: "groups/list", collection: @groups, as: "group"
+  .menu__list
+    %ul
+      = render partial: "groups/list", collection: @groups, as: "group"
 .chat
   .chat__group
     .chat__group__edit
