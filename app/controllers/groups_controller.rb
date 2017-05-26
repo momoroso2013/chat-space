@@ -28,7 +28,7 @@ before_action :index_variables, only: [:edit, :update]
     if @group.update(group_params)
       redirect_to :root, notice: "グループを編集しました"
     else
-      render :new
+      render :edit
   end
   end
 
