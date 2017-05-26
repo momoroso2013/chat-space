@@ -15,7 +15,7 @@ $(function() {
   function buildHTML(user_name, user_id) {
     var html =
     `<div class = "chat-group-user clearfix" user_id = ${user_id}>
-      <input user_name = "chat-group[user_ids][]" type = "hidden" value = "${user_id}">
+      <input name = "group[user_ids][]" type = "hidden" value = "${user_id}">
       <p class = "chat-group-user__name">${user_name}</p>
       <a class = "user-search-remove chat-group-user__btn chat-group-user__btn--remove" user-id = "${user_id}">削除</a>
     </div>`
@@ -58,6 +58,9 @@ $(function() {
     var user_id = $(this).attr('user_id')
     var html = buildHTML(user_name, user_id);
     memberList.append(html);
+    // 復讐のために残す
+    // console.log("====html====");
+    // console.log(html);
     userAdd.parent().remove();
   })
 

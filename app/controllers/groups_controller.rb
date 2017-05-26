@@ -11,12 +11,12 @@ before_action :index_variables, only: [:edit, :update]
   end
 
   def create
-   @group = Group.new(group_params)
-    if @group.save
-      redirect_to :root, notice: 'グループを作成しました。'
-    else
-      render :new
-    end
+    @group = Group.new(group_params)
+      if @group.save
+        redirect_to :root, notice: 'グループを作成しました。'
+      else
+        render :new
+      end
   end
 
   def edit
@@ -26,9 +26,9 @@ before_action :index_variables, only: [:edit, :update]
   def update
     index_variables
     if @group.update(group_params)
-    redirect_to :root, notice: "グループを編集しました"
-  else
-    render :new
+      redirect_to :root, notice: "グループを編集しました"
+    else
+      render :edit
   end
   end
 
