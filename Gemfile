@@ -53,6 +53,7 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
+gem 'carrierwave'
 
 group :test do
   gem 'faker'
