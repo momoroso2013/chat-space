@@ -54,6 +54,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
+gem 'rmagick'
 
 group :test do
   gem 'faker'
