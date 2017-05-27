@@ -4,3 +4,6 @@
   = message.created_at
 %p.user-message
   = message.text
+- if message.image.url
+  %p.user-image
+    = image_tag message.image, class: "image_size"

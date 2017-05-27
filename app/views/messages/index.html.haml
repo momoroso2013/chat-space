@@ -22,7 +22,7 @@
     = render partial: 'message', collection: @messages
 
   .chat__send-message
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: {id: :form_id }  do |f|
       = f.text_field :text, class: "type-message", placeholder: "Type a message"
       = f.label :image do
         = f.file_field :image, class: "type-message--image", style: "display:none;"
