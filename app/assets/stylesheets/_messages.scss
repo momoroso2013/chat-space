@@ -45,13 +45,15 @@
       font-size: 12px;
       line-height: 16px;
     }
-    p.user-message{
+    p.user-message {
       padding: 10px 0 40px 0px;
       font-size: 14px;
       color: #434a54;
-
     }
-
+    .image_size {
+        height: 100px;
+        width: 100px;
+    }
   }
   &__send-message {
     background-color: gray;
