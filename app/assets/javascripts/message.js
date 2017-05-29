@@ -49,13 +49,9 @@ $(function() {
 
     .done(function(data) {
       var id = $(".chat-message:last").attr("data-message-id")
-      console.log("===id===")
-      console.log(id)
       var html = "";
       data.messages.forEach(function(message) {
         if (message.id > id ) {
-          console.log("==message.id==")
-          console.log(message.id)
           html = buildHTML(message);
         }
       });
