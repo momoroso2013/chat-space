@@ -54,7 +54,6 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
-gem 'rmagick'
 gem 'fog'
 gem 'dotenv-rails'
 
