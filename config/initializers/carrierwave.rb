@@ -18,6 +18,9 @@ CarrierWave.configure do |config|
     when 'production'
         config.fog_directory  = 'chat-image-upload'
         config.asset_host = 'https://s3.amazonaws.com/chat-image-upload'
+    when 'test'
+        config.fog_directory  = 'chat-image-upload'
+        config.asset_host = 'https://s3.amazonaws.com/chat-image-upload'
     end
 end
 
