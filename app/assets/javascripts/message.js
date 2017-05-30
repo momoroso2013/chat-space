@@ -50,7 +50,7 @@ $(function() {
     .done(function(data) {
       var id = $(".chat-message:last").attr("data-message-id")
       var html = "";
-      data.messages.forEach(function(message) {
+      $.each(data.messages, function(message) {
         if (message.id > id ) {
           html = buildHTML(message);
         }
