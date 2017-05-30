@@ -6,6 +6,10 @@ def index
   @message = Message.new
   @messages = @group.messages.includes(:user)
   @groups = current_user.groups.order("id DESC")
+  respond_to do |format|
+    format.html
+    format.json
+  end
 end
 
 def create

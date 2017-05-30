@@ -1,9 +1,10 @@
-%p.posted-user-name
-  = message.user.name
-%p.created-at
-  = message.created_at
-%p.user-message
-  = message.text
-- if message.image.url
-  %p.user-image
-    = image_tag message.image, class: "image_size"
+.chat-message{ "data-message-id": "#{message.id}"}
+  %p.posted-user-name
+    = message.user.name
+  %p.created-at
+    = message.created_at
+  %p.user-message
+    = message.text
+  - if message.image.url
+    %p.user-image
+      = image_tag message.image, class: "image_size"

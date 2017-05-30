@@ -2,6 +2,7 @@ $(function() {
   function buildHTML(message) {
     var addImage = (message.image !== null) ? `<img class = "image_size", src="${message.image}">` : ''
     var html = `
+    <div class="chat-message" data-message-id="${message.id}">
       <p class = "posted-user-name">
         ${message.name}
       </p>
@@ -21,28 +22,40 @@ $(function() {
     var textField = $('.type-message');
     var message = textField.val();
     var formdata = new FormData($("#form_id").get(0));
-    // 復習で残す
-    // console.log("===message===");
-    // console.log(message);
-    // console.log("===item===");
-    // for(item of formdata) console.log(item);
-    // console.log("===image===");
-    // console.log(formdata.get("message[image]"));
+      $.ajax({
+        type: 'POST',
+        url: './messages',
+        data: formdata,
+        processData: false,
+        contentType: false,
+        dataType: 'json'
+      })
+      .done(function(data) {
+        var html = buildHTML(data);
+        $(".chat__content-message").append(html);
+        textField.val('');
+      })
+      .fail(function() {
+        alert("メッセージを入力してください");
+      })
+  });
+
+  setInterval(function() {
     $.ajax({
-      type: 'POST',
+      type: 'get',
       url: './messages',
-      data: formdata,
-      processData: false,
-      contentType: false,
       dataType: 'json'
     })
+
     .done(function(data) {
-      var html = buildHTML(data);
+      var id = $(".chat-message:last").attr("data-message-id")
+      var html = "";
+      $.each(data.messages, function(message) {
+        if (message.id > id ) {
+          html = buildHTML(message);
+        }
+      });
       $(".chat__content-message").append(html);
-      textField.val('');
-      })
-    .fail(function() {
-      alert("メッセージを入力してください");
     });
-  });
+  }, 5000 );
 });
